@@ -2,11 +2,15 @@
 
 ## Core Features :
 
-1. Vehicle & Driver Registration — Register different vehicle types (sedan, SUV, auto), assign drivers, and track availability/status (available, on-trip, offline)
+1. Driver & Rider Registration — CRUD APIs for registering drivers (with vehicle details) and riders. Drivers have a status: AVAILABLE, ON_TRIP, OFFLINE.
 
-2. Ride Booking & Matching — Accept ride requests with pickup/drop location, match to the nearest available driver, and manage ride lifecycle (requested → accepted → in-progress → completed)
 
-3. Fare Calculation — Calculate fare based on distance, vehicle type, time of day, and waiting time; generate a final trip invoice
+2. Book & Complete a Ride — Rider requests a ride with source + destination. System finds the nearest available driver, creates a trip, and marks driver as ON_TRIP. A "complete ride" endpoint ends the trip and marks driver AVAILABLE again.
 
-## Bonus Features :
-1. Rating & Feedback System — Post-trip ratings for both driver and rider, with logic to flag/suspend accounts that fall below a threshold
+
+3. Fare Calculation — On trip completion, calculate fare based on distance (use simple Euclidean/Manhattan distance from coordinates). Apply a base fare + per-km rate.
+
+
+## Bonus Feature
+
+1. Ride History & Earnings Report — Endpoint to fetch all past trips for a rider or driver, with total earnings summary for the driver (total trips + total amount earned).
