@@ -11,6 +11,10 @@ import java.util.*;
 public class DriverRepository {
     private final Map<Long,Driver> drivers = new HashMap<>();
     
+    public List<Driver> findAll(){
+        return new ArrayList<>(drivers.values());
+    }
+    
     public Driver save(Driver driver){
         this.drivers.put(driver.getId(), driver);
         return driver;

@@ -15,6 +15,5 @@ public class RideRepository {
         rideHistory.put(ride.getId(),ride);
         return ride;
     }
-
-
+    
 }

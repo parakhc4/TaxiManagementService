@@ -18,5 +18,5 @@ public class DriverService {
     public Driver registerDriver(String name, VehicleType vehicleType, String vehicleNumber){
         return driverRepository.save(new Driver(name,new Vehicle(vehicleType, vehicleNumber)));
     }
-    
+
 }
