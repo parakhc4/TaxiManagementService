@@ -12,6 +12,7 @@ public class Driver extends User {
     private DriverStatus driverStatus;
     private Long totalEarning;
     private List<Ride> rideHistory;
+    private Location currentLocation;
 
 
     public Driver(String name,Vehicle vehicle) {
@@ -20,6 +21,7 @@ public class Driver extends User {
         this.driverStatus = DriverStatus.AVAILABLE;
         this.totalEarning = Long.valueOf(0);
         this.rideHistory = new ArrayList<Ride>();
+        this.currentLocation = new Location(0,0,"Base");
     }
 
     public Vehicle getVehicle() {
@@ -68,6 +70,16 @@ public class Driver extends User {
         setTotalEarning(totalEarning);
         return this;
     }
+
+    public Location getCurrentLocation() {
+        return this.currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+
 
     public Driver rideHistory(List<Ride> rideHistory) {
         setRideHistory(rideHistory);
