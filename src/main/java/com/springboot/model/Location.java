@@ -4,13 +4,13 @@ import java.util.Objects;
 public class Location {
     private int x;
     private int y;
-    private String Name;
+    private String name;
 
 
-    public Location(int x, int y, String Name) {
+    public Location(int x, int y, String name) {
         this.x = x;
         this.y = y;
-        this.Name = Name;
+        this.name = name;
     }
 
     public int getX() {
@@ -30,11 +30,11 @@ public class Location {
     }
 
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Location x(int x) {
@@ -47,8 +47,8 @@ public class Location {
         return this;
     }
 
-    public Location Name(String Name) {
-        setName(Name);
+    public Location name(String name) {
+        setName(name);
         return this;
     }
 
@@ -60,12 +60,12 @@ public class Location {
             return false;
         }
         Location location = (Location) o;
-        return x == location.x && y == location.y && Objects.equals(Name, location.Name);
+        return x == location.x && y == location.y && Objects.equals(name, location.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y, Name);
+        return Objects.hash(x, y, name);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Driver extends User {
     private List<Ride> rideHistory;
 
 
-    public Driver(String name,Vehicle vehicle, DriverStatus driverStatus, Long totalEarning) {
+    public Driver(String name,Vehicle vehicle) {
         super(name);
         this.vehicle = vehicle;
         this.driverStatus = DriverStatus.AVAILABLE;
